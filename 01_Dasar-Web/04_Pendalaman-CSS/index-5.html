@@ -30,6 +30,8 @@
           overflow: auto;
           margin: 0;
           padding: 0px;
+
+          display: flex;
         }
 
         h2, h3 {
@@ -101,19 +103,27 @@
 
         #content {
           float: left;
+          width: 75%;
         }
         
         aside {
           display: flex;
+          /* flex: none; */
           flex-direction: column; /* Menetapkan tata letak anak-anak menjadi kolom */
           justify-content: center; /* Menyusun anak-anak di tengah secara vertikal */
           align-items: center; /* Menyusun anak-anak di tengah secara horizontal */
           margin: 0;
+
+          height: max-content;
+          width: 25%;
         }
         
         @media screen and (max-width: 1000px) {
-          #content, aside {
-            padding: 0px;
+          main{
+            display: block;
+          }
+          #content, aside{
+            width: 100%;
           }
         }
     </style>

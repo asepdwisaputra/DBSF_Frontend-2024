@@ -11,6 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
+        .jumbotron {
+          font-size: 20px;
+          padding: 60px;
+          background-color: #00c8eb;
+          text-align: center;
+          color: white;
+        }
+
         body{
           font-family:'Quicksand', sans-serif;
 
@@ -19,10 +27,8 @@
         }
 
         main{
-          /* display: flex; */
-          
           overflow: auto;
-          margin: 0px;
+          margin: 0;
           padding: 0px;
         }
 
@@ -69,27 +75,10 @@
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /*kaki, tasbaw, buram, luasburam, warna*/
           border-radius: 5px;
 
-          /* width: auto */
-          height: fit-content;
+          /* height: fit-content; */
 
           margin: 20px;
           padding: 20px;
-        }
-
-        .profile table{
-          text-align: center;
-          width: 100%;
-          height: auto;
-
-          /* margin: 0; */
-        }
-
-        .jumbotron {
-          font-size: 20px;
-          padding: 60px;
-          background-color: #00c8eb;
-          text-align: center;
-          color: white;
         }
 
         nav li{
@@ -101,6 +90,13 @@
         nav{
           background-color: #00a2c6;
           padding: 5px;
+
+          position: sticky;
+          top: 0;
+        }
+
+        header{
+          display: inline;
         }
 
         #content {
@@ -109,19 +105,19 @@
         }
         
         aside {
-          float: right;
-          width: 20%;
-          padding-left: 20px;
+          display: flex;
+          /* float: right; */
+          width: 25%;
         }
-
-        /* * {
-          box-sizing: border-box;
-        } */
-
+        
         @media screen and (max-width: 1000px) {
           #content, aside {
             width: 100%;
-            padding: 0;
+            padding: 0%;
+          }
+
+          aside{
+            align-items: center;
           }
         }
     </style>

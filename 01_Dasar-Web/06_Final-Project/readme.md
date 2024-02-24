@@ -7,7 +7,7 @@ Proyek ini adalah tugas pembuatan web dasar yang dibuat sebagai bagian dari kuri
 ## Cara Menggunakan
 
 1. **Prasyarat**: Pastikan Kamu memiliki editor kode seperti Visual Studio Code, Sublime Text, atau yang sejenisnya diinstal di komputer Anda.
-2. **Clone Repositori?**: Kalo mau nyontek langsung download file .zip aja ya disini
+2. **Clone Repositori?**: Kalo mau nyontek langsung download file .zip aja ya [disini](https://github.com/asepdwisaputra)
 3. **Buka di Editor Kode**: Buka folder proyek yang telah Anda kloning menggunakan editor kode pilihan Anda.
 4. **Buka File HTML**: Buka file `index.html` menggunakan browser web untuk melihat tampilan proyek.
 

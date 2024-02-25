@@ -8,6 +8,9 @@
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 h1,
@@ -100,21 +103,6 @@ p {
   text-align: justify;
 }
 
-footer p {
-  background-color: #212121;
-  color: white;
-  font-size: 0.8rem;
-  padding: 10px;
-  margin: 0;
-  box-sizing: border-box;
-  text-align: center;
-  width: 100%;
-}
-
-footer span {
-  color: greenyellow;
-}
-
 section {
   background-color: #f1f1f1;
   border-radius: 20px;
@@ -135,6 +123,25 @@ article.card {
   display: none;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+footer p {
+  background-color: #212121;
+  color: white;
+  font-size: 0.8rem;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100%;
+}
+
+footer span {
+  color: greenyellow;
+}
+
 @media screen and (max-width: 500px) {
   h2 {
     font-size: 1.5rem;
@@ -142,11 +149,6 @@ article.card {
 
   footer p {
     text-align: center;
-  }
-
-  main {
-    display: flex;
-    flex-flow: column nowrap;
   }
 
   #content,

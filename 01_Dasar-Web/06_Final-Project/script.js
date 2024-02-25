@@ -1,2 +1,9 @@
 const cards = document.querySelectorAll(".card");
-const thumbs = document.querySelectorAll(".thumb section");
+const aside = document.querySelector("aside");
+
+aside.addEventListener("click", function (e) {
+  // Mana yang di klik
+  if ((e.target.classList.contains = "section")) {
+    alert("OK");
+  }
+});

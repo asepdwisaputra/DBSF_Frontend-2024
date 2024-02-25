@@ -1,2 +1,2 @@
-const a = "JS aku balikk!";
-console.loh(a);
+const cards = document.querySelectorAll(".card");
+const thumbs = document.querySelectorAll(".thumb section");

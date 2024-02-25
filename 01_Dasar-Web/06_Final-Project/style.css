@@ -1,8 +1,23 @@
 * {
-  margin: 0;
-  padding: 0;
   font-family: Roboto;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -12,16 +27,24 @@ h1 {
   color: greenyellow;
 }
 
-header nav {
+header {
+  margin: 0;
+  padding: 0;
+  position: sticky;
   background-color: #f1f1f1;
+  top: 0;
+  z-index: 1000;
 }
 
-header nav ul {
+nav ul {
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
 }
 
-header nav ul li {
+nav ul li {
+  margin: 0;
   padding: 1rem;
   list-style: none;
   text-align: center;
@@ -56,23 +79,88 @@ main {
   gap: 1rem 2rem;
 
   width: 75%;
+  margin: 10px;
 }
 
 aside {
-  padding-left: 10px;
-
   flex-grow: 1;
   width: 25%;
+  margin: 10px;
 }
 
-footer {
+p {
+  text-align: justify;
+  margin: 0;
+}
+
+.thumb img {
+  width: 100%;
+  display: flex;
+
+  text-align: justify;
+}
+
+footer p {
   background-color: #212121;
   color: white;
   font-size: 0.8rem;
-  padding: 1%;
+  padding: 10px;
+  margin: 0;
+  box-sizing: border-box;
   text-align: center;
+  width: 100%;
 }
 
 footer span {
   color: greenyellow;
+}
+
+section {
+  background-color: #f1f1f1;
+  border-radius: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+section img {
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+article.card {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  footer p {
+    text-align: center;
+  }
+
+  main {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  #content,
+  aside {
+    align-self: center;
+    width: 100%;
+    padding: 10px;
+  }
+
+  hr {
+    height: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
 }

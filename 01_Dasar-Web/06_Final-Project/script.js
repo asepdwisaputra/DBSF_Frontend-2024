@@ -1,9 +1,21 @@
-const cards = document.querySelectorAll(".card");
-const aside = document.querySelector("aside");
+const beritas = document.querySelectorAll("#content article");
+const sections = document.querySelectorAll("section");
 
-aside.addEventListener("click", function (e) {
-  // Mana yang di klik
-  if ((e.target.classList.contains = "section")) {
-    alert("OK");
-  }
+sections.forEach((section) => {
+  section.addEventListener("click", function () {
+    // Ambil id artikel yang sesuai dengan section yang diklik
+    const beritaId = "berita" + this.id.slice(-1);
+
+    // Seleksi artikel yang sesuai di dalam elemen dengan ID "content"
+    const berita = document.querySelector("#content #" + beritaId);
+
+    beritas.forEach((article) => {
+      if (article.id == beritaId) {
+        article.style.display = "block";
+      }
+      if (article.id != beritaId) {
+        article.style.display = "none";
+      }
+    });
+  });
 });

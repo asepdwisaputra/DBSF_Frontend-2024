@@ -111,8 +111,17 @@ section {
   margin-bottom: 10px;
 }
 
+section:hover {
+  cursor: pointer;
+}
+
 section img {
+  transition: transform 0.3s ease;
   border-radius: 10px;
+}
+
+section img:hover {
+  transform: scale(1.5);
 }
 
 h2 {
@@ -121,6 +130,10 @@ h2 {
 
 article.card {
   display: none;
+}
+
+#berita1 {
+  display: block;
 }
 
 footer {
@@ -143,6 +156,13 @@ footer span {
 }
 
 @media screen and (max-width: 500px) {
+  #content,
+  aside {
+    align-self: center;
+    width: 100%;
+    padding: 10px;
+  }
+
   h2 {
     font-size: 1.5rem;
   }
@@ -151,11 +171,9 @@ footer span {
     text-align: center;
   }
 
-  #content,
-  aside {
-    align-self: center;
-    width: 100%;
-    padding: 10px;
+  main {
+    display: flex;
+    flex-direction: column;
   }
 
   hr {

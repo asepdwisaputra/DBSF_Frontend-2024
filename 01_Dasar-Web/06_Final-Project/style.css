@@ -9,7 +9,6 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
 }
 
@@ -47,8 +46,8 @@ nav ul {
 }
 
 nav ul li {
-  margin: 0;
-  padding: 1rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
   list-style: none;
   text-align: center;
 
@@ -130,6 +129,8 @@ h2 {
 
 article.card {
   display: none;
+
+  padding-bottom: 10%;
 }
 
 #berita1 {
@@ -138,6 +139,7 @@ article.card {
 
 footer {
   bottom: 0;
+  position: fixed;
 }
 
 footer p {
@@ -164,6 +166,10 @@ footer span {
 
   h2 {
     font-size: 1.5rem;
+  }
+
+  footer {
+    position: relative;
   }
 
   footer p {

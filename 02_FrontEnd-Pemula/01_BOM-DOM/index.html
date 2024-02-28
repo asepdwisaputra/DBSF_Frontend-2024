@@ -49,10 +49,15 @@
     <!-- Javascript here -->
 
     <script>
+      // RUMUS setAttribute!!
+      // ```
+      //   element.setAttribute('nama_atribut_sasaran', 'nilai_atribut_sasaran');
+      // ```
+
       // Misalnya kita mau setAttribute gambar agar ga terlalu kecil
       const gambar = document.getElementById("gambar");
       gambar.setAttribute("width", 300);
-      gambar.setAttribute("height", 215);
+      gambar.setAttribute("height", 215); // angka-nya kok ga error? bukannya string di rumus? ini terjadi karena automatic type conversion in javascript
 
       // Kita akan membuat button Play (Coming Soon), menjadi memiliki type="submit"
       const button = document.querySelectorAll(".button");

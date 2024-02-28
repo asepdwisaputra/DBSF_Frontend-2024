@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Cube World!</title>
+  <style>
+    button {
+      width: 200px;
+      font-size: 15px;
+      margin: 8px;
+      padding: 3px;
+    }
+    
+    main {
+      margin: 2px;
+    }
+  </style>
+</head>
+<body>
+<div id="main" align="center">
+  <h2>Its Cube Time!</h2>
+  <img id="gambar"
+       src="https://raw.githubusercontent.com/dicodingacademy/a315-web-pemula-labs/shared-files/homepage-dicoding-challenge-illustration.png"
+       alt="Its a rubiks cube!" width="300" height="215">
+  <p id="caption"><b>Sudah siap untuk memecahkan teka-teki permainan tersebut?<b></p>
+  <div class="button-group">
+    <div class="button">
+      <button>Sejarah</button>
+    </div>
+    <div class="button">
+      <button>Permainan</button>
+    </div>
+    <div class="button">
+      <button><i>Fun Fact</i></button>
+    </div>
+    <div class="button">
+      <button disabled="disabled">Play (Coming Soon)</button>
+    </div>
+    <div class="button">
+      <button>Exit</button>
+    </div>
+  </div>
+</div>
+<hr size="2" width="95%" color="black">
+<div id="links">
+  <p>Situs lainnya yang tidak kalah menarik:</p>
+  <ul>
+    <li><a href="http://www.dicoding.com" id="dicodingLink">Dicoding</a></li>
+    <li><a href="http://www.google.com" id="googleLink">Google</a></li>
+  </ul>
+</div>
+
+<script>
+    // innerText(Teks aja) VS innerHTML(Teks dan Tag)
+    const links = document.getElementById("links");
+    console.log(links.innerText);
+    console.log(links.innerHTML);
+
+    // Manipulasi innerText
+    const dicoding = document.getElementById('dicodingLink');
+    dicoding.innerText = "Belajar Coding di Dicoding"; // Maka namanya akan berubah
+
+    // Manipulasi innerHTML
+    dicoding.innerHTML = "<i>Belajar Coding di Dicoding</i>"; // Jadi miring deh
+
+    // LANJUT!!
+    // Sekarang Belajar style.property
+    const buttons = document.getElementsByClassName('button');
+    for (const button of buttons){
+        // Masuk ke masing-masing anak button -> ubah style
+        button.children[0].style.borderRadius = '6px'; // Ini saya pake angka tadi gabis, harus string
+        // jika di CSS border-radius -> di JS borderRadius
+    }
+
+</script>
+
+</body>
+</html>

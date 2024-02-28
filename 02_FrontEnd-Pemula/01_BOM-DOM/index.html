@@ -53,6 +53,11 @@
       const gambar = document.getElementById("gambar");
       gambar.setAttribute("width", 300);
       gambar.setAttribute("height", 215);
+
+      // Kita akan membuat button Play (Coming Soon), menjadi memiliki type="button"
+      const button = document.querySelectorAll(".button");
+      const buttonPlay = button[3].children[0]; // Kenapa pake .children[0]?? karena ada div sebagai parent-nya
+      buttonPlay.setAttribute("type", "submit");
     </script>
   </body>
 </html>

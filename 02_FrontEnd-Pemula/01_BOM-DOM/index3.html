@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Memasak Air</title>
+  </head>
+  <body>
+    <p id="name">Langkah-langkah memasak air</p>
+    <ol id="daftar">
+      <li id="awal">Masukkan air ke dalam wadah.</li>
+      <li id="akhir">Matikan kompor.</li>
+    </ol>
+    <hr size="2" width="95%" color="black" />
+    <!-- Penggunaan size width color, katanya sudah usang dan tidak direkomendasikan -->
+
+    <script>
+      // appendChild()
+      // Tangkap wadah-nya dulu
+      const daftar = document.getElementById("daftar");
+      // buat element-nya, pada kasus ini list
+      const listBaru = document.createElement("li");
+      // edit isi-nya
+      listBaru.innerText = "Selamat Menikmati!";
+      // masukkan ke wadah-nya
+      daftar.appendChild(listBaru);
+
+      // insertBefore()
+      // buat element-nya
+      const listAwalBaru = document.createElement("li");
+      // edit isi-nya
+      listAwalBaru.innerText = "Kumpulkan niat!";
+      // tangkap element yang akan ada setelahnya
+      const elementAwal = document.getElementById("awal");
+      // masukan ke wadah-nya, dengan ketentuan element baru baru element tangkapan
+      daftar.insertBefore(listAwalBaru, elementAwal);
+    </script>
+  </body>
+</html>

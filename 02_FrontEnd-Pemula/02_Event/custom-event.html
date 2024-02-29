@@ -29,12 +29,12 @@
         const tombol = document.getElementById("tombol");
         tombol.addEventListener("changeCaption", customEventHandler);
         tombol.addEventListener("click", function () {
-          alert("hai");
+          tombol.dispatchEvent(changeCaption);
         });
       });
 
       function customEventHandler(ev) {
-        console.log("Event" + ev.target + "telah dijalankan");
+        console.log("Event " + ev.type + " telah dijalankan");
         const caption = document.getElementById("caption");
         caption.innerText = "Custom Event Aktif!";
       }

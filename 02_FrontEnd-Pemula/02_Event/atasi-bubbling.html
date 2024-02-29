@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bubbling Solve</title>
+
+    <style>
+      body div {
+        width: 60%;
+
+        margin: 8px;
+        padding: 5px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div align="center" id="langit">
+      LANGIT
+      <div align="center" id="luar">
+        LUAR
+        <div align="center" id="tengah">
+          TENGAH
+          <div align="center" id="dalam">DALAM</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const divs = document.getElementsByTagName("div");
+      for (let el of divs) {
+        // Pastikan function di addEventListener memiliki parameter
+        el.addEventListener("click", function (e) {
+          alert("ELEMEN " + el.getAttribute("id").toUpperCase());
+          e.stopPropagation(); // ini kode-nya
+        });
+      }
+    </script>
+  </body>
+</html>

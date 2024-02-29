@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Capturing World</title>
+
+    <style>
+      body div {
+        width: 60%;
+
+        margin: 8px;
+        padding: 5px;
+        border: 2px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- CONTOH EVENT Capturing -->
+
+    <div align="center" id="langit">
+      LANGIT
+      <div align="center" id="luar">
+        LUAR
+        <div align="center" id="tengah">
+          TENGAH
+          <div align="center" id="dalam">DALAM</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const divs = document.getElementsByTagName("div");
+      for (let el of divs) {
+        el.addEventListener(
+          "click",
+          function (e) {
+            // console.log("ELEMEN " + el.getAttribute("id").toUpperCase());
+            alert("ELEMEN " + el.getAttribute("id").toUpperCase());
+          },
+          true
+          // Kalo pengin bubbling ga perlu pake true atau bisa ditulis false atau gausah sama sekali ditulis
+        );
+      }
+    </script>
+  </body>
+</html>

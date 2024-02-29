@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event World</title>
+
+    <style>
+      .contents {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid black;
+        padding: 15px;
+      }
+
+      #generateButton {
+        margin-top: 5px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contents" align="center" hidden>
+      <button id="incrementButton">Tekan Aku :)</button>
+      <h3>
+        Kamu sudah menekan tombol di atas sebanyak <span id="count">0</span>
+      </h3>
+    </div>
+
+    <!-- Kode JavaScript kita -->
+    <script>
+      // Menghilangkan Hidden attribute, dengan onload
+      function welcome() {
+        alert("Sim salabim, muncullah!");
+        const contents = document.querySelector(".contents");
+        contents.removeAttribute("hidden");
+      }
+      // menjalankan fungsi welcome dengan onload di body
+      // jadi ketika di refresh akan load lagi
+      document.body.onload = welcome;
+
+      // Membuat hitungan dengan button
+      function incrementButton() {
+        document.getElementById("count").innerText++;
+
+        // Kita akan mengatur jika sudah di klik 5x ada kejutan
+        if (document.getElementById("count").innerText == 5) {
+          const hiddenMessage = document.createElement("h4");
+          hiddenMessage.innerText = "Kamu mendapatkan hadiah tersembunyi!";
+
+          const hiddenImg = document.createElement("img");
+          hiddenImg.setAttribute("src", "https://i.ibb.co/0V49VRZ/catto.jpg");
+
+          const contents = document.querySelector(".contents");
+          contents.appendChild(hiddenMessage).appendChild(hiddenImg);
+
+          // Misalnya ada reset count - eksplorasi
+          const count = document.querySelector("#count");
+          count.innerText = "0";
+        }
+      }
+
+      const button = document.querySelector("#incrementButton");
+      button.onclick = incrementButton;
+      // Bisa juga di ringkas
+      // document.querySelector("#incrementButton").onclick = incrementButton;
+    </script>
+  </body>
+</html>

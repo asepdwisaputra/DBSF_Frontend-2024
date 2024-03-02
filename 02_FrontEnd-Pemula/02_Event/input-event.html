@@ -176,6 +176,20 @@
           // Eksplorasi
           submitButtonStatus.style.cursor = "pointer";
         });
+
+      // ON-Copy
+      document
+        .getElementById("inputCopy")
+        .addEventListener("copy", function () {
+          alert("Anda telah mengcopy sesuatu");
+        });
+
+      // ON-Paste
+      document
+        .getElementById("inputPaste")
+        .addEventListener("paste", function () {
+          alert("Anda telah mem-paste sesuatu");
+        });
     </script>
   </body>
 </html>

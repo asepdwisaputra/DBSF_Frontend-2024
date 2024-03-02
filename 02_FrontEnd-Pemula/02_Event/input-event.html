@@ -157,6 +157,25 @@
           document.getElementById("notifikasiSisaKarakter").style.visibility =
             "hidden";
         });
+
+      // ON-Change
+      document
+        .getElementById("inputCaptcha")
+        .addEventListener("change", function () {
+          console.log("Input change");
+
+          const inputCaptcha = document.getElementById("inputCaptcha").value;
+          const submitButtonStatus = document.getElementById("submitButton");
+
+          if (inputCaptcha == "PRNU") {
+            submitButtonStatus.removeAttribute("disabled");
+          } else {
+            submitButtonStatus.setAttribute("disabled", "");
+          }
+
+          // Eksplorasi
+          submitButtonStatus.style.cursor = "pointer";
+        });
     </script>
   </body>
 </html>

@@ -36,15 +36,20 @@ const todos = [];
 const RENDER_EVENT = "render-todo";
 
 document.addEventListener(RENDER_EVENT, () => {
-  //   console.log(todos);
-
   const uncompletedTODOList = document.getElementById("todos");
   uncompletedTODOList.innerHTML = "";
+
+  const completedTODOList = document.getElementById("completed-todos");
+  completedTODOList.innerHTML = "";
 
   for (const todoItem of todos) {
     const todoElement = makeTodo(todoItem);
     if (!todoItem.isCompleted) {
+      // Akan dijalankan jika isCompleted = false
       uncompletedTODOList.append(todoElement);
+    } else {
+      // Akan dijalankan jika isCompleted = true
+      completedTODOList.append(todoElement);
     }
   }
 });
@@ -112,5 +117,33 @@ function findTodo(todoId) {
       return todoItem;
     }
   }
-  return null;
+  return -1;
+}
+
+// function findTodo(todoId) {
+//   for (const index in todos) {
+//     if (todos[index].id === todoId) {
+//       return index;
+//     }
+//   }
+
+//   return -1;
+// }
+
+function removeTaskFromCompleted(todoId) {
+  const todoTarget = findTodo(todoId);
+
+  if (todoTarget === -1) return;
+
+  todos.splice(todoTarget, 1);
+  document.dispatchEvent(new Event(RENDER_EVENT));
+}
+
+function undoTaskFromCompleted(todoId) {
+  const todoTarget = findTodo(todoId);
+
+  if (todoTarget == null) return;
+
+  todoTarget.isCompleted = false;
+  document.dispatchEvent(new Event(RENDER_EVENT));
 }

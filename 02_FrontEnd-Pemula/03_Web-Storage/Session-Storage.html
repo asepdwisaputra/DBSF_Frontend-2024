@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web Storage World</title>
+
+    <style>
+      .contents {
+        border: 2px solid black;
+        padding: 15px;
+
+        position: fixed;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+      }
+
+      #generateButton {
+        margin-top: 5px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="contents" align="center">
+      <!--   Penggunaan align="center" tidak direkomendasikan karena sudah usang -->
+
+      <h1>Session Storage</h1>
+
+      <button id="incrementButton">Tambah nilai</button>
+      <button id="clear">Hapus storage</button>
+
+      <h3>Kamu sudah menekan tombol di atas sebanyak:</h3>
+      <h2 id="count">0</h2>
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script>
+      const sessionStorageKey = "PRESS_FREQUENCY";
+
+      // Pengecekan: apakah data sessionStorage dengan key count tersedia atau belum
+      if (typeof Storage !== "undefined") {
+        if (sessionStorage.getItem(sessionStorageKey) === null) {
+          // Jika item pada session storage belum ada, datanya akan diatur dengan nilai awal, yakni 0
+          sessionStorage.setItem(sessionStorageKey, 0);
+        }
+
+        const incrementButton = document.querySelector("#incrementButton");
+        const clearButton = document.querySelector("#clear");
+        const countDisplay = document.querySelector("#count");
+
+        // Memberikan nilai item dari session storage
+        countDisplay.innerText = sessionStorage.getItem(sessionStorageKey);
+
+        // Mengupdate nilai dari item session storage jika tombol ditekan
+        incrementButton.addEventListener("click", function () {
+          let count = sessionStorage.getItem(sessionStorageKey);
+          count++;
+          sessionStorage.setItem(sessionStorageKey, count);
+          countDisplay.innerText = sessionStorage.getItem(sessionStorageKey);
+        });
+
+        // Memberikan nilai 0 ke tampilan karena di-reset dan menghapus item
+        clearButton.addEventListener("click", function () {
+          sessionStorage.removeItem(sessionStorageKey);
+          countDisplay.innerText = 0;
+        });
+      } else {
+        alert("Browser yang Anda gunakan tidak mendukung Web Storage");
+      }
+    </script>
+  </body>
+</html>
